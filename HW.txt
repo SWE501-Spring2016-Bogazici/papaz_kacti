@@ -1,0 +1,70 @@
+// Example program
+#include <iostream>
+#include <string>
+ 
+using namespace std;
+ 
+void SquareChar(string a, string b, string c, string d, string e, string f) {
+
+int A[6];
+A[0] = a.length();
+A[1] = b.length();
+A[2] = c.length();
+A[3] = d.length();
+A[4] = e.length();
+A[5] = f.length();
+
+string B[6]; 
+B[0] = a;
+B[1] = b;
+B[2] = c;
+B[3] = d;
+B[4] = e;
+B[5] = f;
+
+ for (int k = 1; k<6; k++) {
+      int temp = A[k];
+      for (int m=k-1; m>=0; m--){
+          if(A[m]>temp){
+              A[m+1] = A[m];
+          }
+              else break;
+             A[m] = temp;   
+          }
+     
+      }
+int j = A[5];
+A[0] = a.length();
+A[1] = b.length();
+A[2] = c.length();
+A[3] = d.length();
+A[4] = e.length();
+A[5] = f.length();
+for (int i=0;i<=(j+1); i++){
+cout<<"*";
+}
+cout<<endl;
+
+for (int m=0; m<6; m++) {
+    cout<<"*"<<B[m];
+    for (int n=0; n<j-A[m];n++){cout<<" ";} 
+    cout<<"*"<<endl;
+    }
+    for (int i=0;i<=(j+1); i++){
+cout<<"*";
+}
+
+
+
+}
+
+int main()
+{
+    string A = "Cem"; 
+    string B = "Recep";
+    string C = "asadadfdaadfadadaa";
+    string D = "Leyla";
+    string E = "Fatma";
+    string F = "Selin";
+    SquareChar(A,B,C,D,E,F);
+}
